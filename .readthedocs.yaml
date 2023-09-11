@@ -6,8 +6,8 @@ build:
     python: '3.10'
   jobs:
     post_create_environment:
+      - echo $READTHEDOCS_VIRTUALENV_PATH
       - curl -sSL https://install.python-poetry.org | python3 -
-      - echo $PATH
       - /home/docs/.local/bin/poetry config virtualenvs.create false
     post_install:
       - /home/docs/.local/bin/poetry install --with docs
