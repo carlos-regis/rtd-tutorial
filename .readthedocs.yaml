@@ -8,9 +8,9 @@ build:
     post_create_environment:
       - curl -sSL https://install.python-poetry.org | python3 -
       - echo $PATH
-      - poetry config virtualenvs.create false
+      - /home/docs/.local/bin/poetry config virtualenvs.create false
     post_install:
-      - poetry install --with docs
+      - /home/docs/.local/bin/poetry install --with docs
 
 sphinx:
    configuration: docs/source/conf.py
