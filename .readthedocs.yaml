@@ -10,6 +10,7 @@ build:
       - curl -sSL https://install.python-poetry.org | python3 -
       - /home/docs/.local/bin/poetry config virtualenvs.create false
     post_install:
+      - "$READTHEDOCS_VIRTUALENV_PATH/bin/activate"
       - /home/docs/.local/bin/poetry install --with docs
 
 sphinx:
